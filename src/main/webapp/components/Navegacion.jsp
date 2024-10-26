@@ -26,14 +26,14 @@
         }
         .navbar .search-bar {
             flex-grow: 5;
-            margin: 0 130px; /* Alinea la barra de búsqueda al centro */
-            width: 400px; /* Tamaño de la barra de búsqueda */
+            margin: 0 130px; 
+            width: 400px; 
         }
         .navbar .search-bar input {
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 20px;
-            width: 100%; /* Hace que la barra ocupe todo el espacio disponible */
+            width: 100%; 
             outline: none;
         }
         .navbar .search-bar input::placeholder {

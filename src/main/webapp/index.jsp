@@ -11,42 +11,102 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Carrito de compras</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Carrito de Compras</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="css/css.css"/>
     </head>
     <body>
+        <!-- Sección de Inicio de Sesión -->
         <jsp:include page="components/Navegacion.jsp"/>
-        
-        <div class="container-fluid mt-2">
-            <h5>Catalogo de Productos</h5>
+
+        <!-- Carrusel Promocional -->
+        <div class="container mt-3">
+            <div id="promotionalCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 100%; margin: auto;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-images">
+                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                            <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-images">
+                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                            <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Estilos CSS para el carrusel -->
+        <style>
+            body {
+                background-color: #000; 
+            }
+            .carousel {
+                background-color: #333; 
+                border-radius: 10px; 
+                padding: 20px; 
+                overflow: hidden; 
+            }
+            .carousel-images {
+                display: flex; 
+                justify-content: center;
+                transform: translateX(-33%); 
+                transition: transform 0.5s ease; 
+            }
+            .img-carousel {
+                height: 345px; 
+                width: 1000px; 
+                flex: 0 0 33.33%; 
+                transition: transform 0.5s ease; 
+                margin: 0 5px;
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                background-color: rgba(255, 255, 255, 0.5); 
+                border-radius: 50%; 
+            }
+        </style>
+
+        <!-- Catálogo de Productos -->
+        <div class="container mt-4">
+            <h5 class="text-center">Catálogo de Productos</h5>
             <hr />
             <div class="row">
                 <c:forEach items="${productos}" var="item">
-                    <div class="col-sm-3 mt-1" style="padding: 15px">
-                        <form action="CarritoControlador" method="get">
-                            <div class="card">
-                                <img src="assets/img/productos/${item.imagen}" width="100%" alt="${item.nombre}" class="card-img"/>
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 text-center">
+                            <img src="assets/img/productos/${item.imagen}" class="card-img-top" alt="${item.nombre}">
                             <div class="card-body">
-                                <p class="fw-bold">${item.nombre}</p>
-                                <input type="hidden" name="accion" value="agregar">
-                                <input type="hidden" name="id" value="${item.idProd}">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <button type="submit" class="btn btn-sm btn-primary">
+                                <h5 class="card-title">${item.nombre}</h5>
+                                <p class="card-text fw-bold">Precio: $/${item.precio}</p>
+                                <form action="CarritoControlador" method="get">
+                                    <input type="hidden" name="accion" value="agregar">
+                                    <input type="hidden" name="id" value="${item.idProd}">
+                                    <button type="submit" class="btn btn-primary">
                                         <i class="fa fa-shopping-cart"></i> Agregar al carrito
                                     </button>
-                                    <small class="fw-bold">$/${item.precio}</small>
-                                </div>
+                                </form>
                             </div>
                         </div>
-                        </form>
                     </div>
                 </c:forEach>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>
 </html>
