@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+f<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,7 +40,7 @@
             color: #999;
         }
         .navbar .right-icons a {
-            color: black;
+            color: withe;
             text-decoration: none;
             margin-left: 15px;
             display: flex;

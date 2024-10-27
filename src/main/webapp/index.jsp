@@ -20,66 +20,64 @@
         <!-- Sección de Inicio de Sesión -->
         <jsp:include page="components/Navegacion.jsp"/>
 
-        <!-- Carrusel Promocional -->
-        <div class="container mt-3">
-            <div id="promotionalCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 100%; margin: auto;">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="carousel-images">
-                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
-                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                            <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+            <!-- Carrusel Promocional -->
+            <div class="container mt-3">
+                <div id="promotionalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 100%; margin: auto;">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                                <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                                <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                                <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                                <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                                <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                                <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="carousel-images">
-                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
-                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                            <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
-                        </div>
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Estilos CSS para el carrusel -->
-        <style>
-            body {
-                background-color: #000; 
-            }
-            .carousel {
-                background-color: #333; 
-                border-radius: 10px; 
-                padding: 20px; 
-                overflow: hidden; 
-            }
-            .carousel-images {
-                display: flex; 
-                justify-content: center;
-                transform: translateX(-33%); 
-                transition: transform 0.5s ease; 
-            }
-            .img-carousel {
-                height: 345px; 
-                width: 1000px; 
-                flex: 0 0 33.33%; 
-                transition: transform 0.5s ease; 
-                margin: 0 5px;
-            }
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-                background-color: rgba(255, 255, 255, 0.5); 
-                border-radius: 50%; 
-            }
-        </style>
+            </div>                                
+            <style>
+                body {
+                    background-color: #000; 
+                }
+                .carousel {
+                    background-color: #333; 
+                    border-radius: 10px; 
+                    padding: 20px; 
+                    overflow: hidden; 
+                }
+                .img-carousel {
+                    height: 345px; 
+                    width: auto; 
+                    border-radius: 8px; 
+                    margin: 0 5px;
+                }
+                .carousel-control-prev-icon,
+                .carousel-control-next-icon {
+                    background-color: rgba(255, 255, 255, 0.5); 
+                    border-radius: 50%; 
+                }
+            </style>
 
         <!-- Catálogo de Productos -->
         <div class="container mt-4">
