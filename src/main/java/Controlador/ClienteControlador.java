@@ -17,9 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ClienteControlador extends HttpServlet {
 
-
     private final String pagNuevo = "PagRegistrarCliente.jsp";
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -28,15 +27,36 @@ public class ClienteControlador extends HttpServlet {
             case "nuevo":
                 Nuevo(request, response);
                 break;
+
+            case "Guardar":
+                Guardar(request, response);
+                break;
             default:
                 throw new AssertionError();
         }
     }
-    
+
+    protected void Guardar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
+        Cliente obj= new Cliente();
+        obj.setNombres(request.getParameter("nombres"));
+        obj.setNombres(request.getParameter("apellidos"));
+        obj.setNombres(request.getParameter("telefono"));
+        obj.setNombres(request.getParameter("correo"));
+        obj.setNombres(request.getParameter("password"));
+        
+        
+        
+        request.setAttribute("cliente", obj);
+        request.getRequestDispatcher(pagNuevo).forward(request, response);
+    }
+
     protected void Nuevo(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         request.setAttribute("cliente", new Cliente());
         request.getRequestDispatcher(pagNuevo).forward(request, response);
     }

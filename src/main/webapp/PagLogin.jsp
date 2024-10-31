@@ -1,6 +1,6 @@
 <%-- 
-    Document   : PagRegistrarCliente
-    Created on : 23 oct. 2024, 18:39:32
+    Document   : PagLogin
+    Created on : 30 oct. 2024, 23:04:21
     Author     : braya
 --%>
 
@@ -14,31 +14,31 @@
         <title>Registrarse</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="assets/css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="img/css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <jsp:include page="components/Navegacion.jsp"/>
 
         <div class="container-fluid mt-3">
+            <h5> Registrar Cuenta </h5>
+            <hr />
 
             <div class="row">
                 <div class="col-sm-9">
-                    <div class="card form-resgistro">
+                    <div class="card">
                         <div class="card-body">
-                            <h5> Registrar Cuenta </h5>
-                            <hr />
-                            <from action="ClienteControlador" method="post">
+                            <from>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="mb-3">
                                             <label>Nombres: <span class="obligatorio">(*)</span></label>
-                                            <input value="${cliente.nombres}" type="text" class="from-control" required="" name="nombres" placeholder="Ingrese su nombre" />
+                                            <input type="text" class="from-control" required="" name="nombres" placeholder="Ingrese su nombre" />
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="mb-3">
                                             <label>Apellidos: <span class="obligatorio">(*)</span></label>
-                                            <input value="${cliente.apellidos}"type="text" class="from-control" required="" name="apellidos" placeholder="Ingrese sus apellidos" />
+                                            <input type="text" class="from-control" required="" name="apellidos" placeholder="Ingrese sus apellidos" />
                                         </div>
                                     </div>
                                 </div>
@@ -46,29 +46,10 @@
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label>Telefono: </label>
-                                            <input value="${cliente.telefono}"type="tel" class="from-control" required="" name="telefono" placeholder="Ingrese su telefono" />
+                                            <input type="text" class="from-control" required="" name="nombres" placeholder="Ingrese su nombre" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="mb-3">
-                                            <label>Correo Electrónico: <span class="obligatorio">(*)</span></label>
-                                            <input value="${cliente.correo}" type="email" class="from-control" required="" name="correo" placeholder="Ingrese su correo electronico" required=""/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="mb-3">
-                                            <label>Contraseña: <span class="obligatorio">(*)</span></label>
-                                        <input value="${cliente.password}" type="password" class="from-control" required="" name="password" placeholder="Ingrese su contraseña" required="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <input type="hidden"name="accion" value="guardar"/>
-                                <button type="submit" class="btn-primary">Registrarse </button> 
                             </from>
                         </div>
                     </div>
