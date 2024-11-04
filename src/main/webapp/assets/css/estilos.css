@@ -11,3 +11,51 @@
     max-width: 600px;
     margin: auto;
 }
+        .navbar {
+            background-color: white !important;
+            border-bottom: 2px solid red;
+        }
+        .navbar-brand img {
+            width: 120px;
+            height: auto;
+        }
+        .navbar .description {
+            color: red;
+            font-size: 12px;
+            white-space: normal; 
+        }
+        .navbar .description-line1 {
+            font-weight: bold;
+        }
+        .navbar .search-bar {
+            flex-grow: 5;
+            margin: 0 130px; 
+            width: 400px; 
+        }
+        .navbar .search-bar input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 100%; 
+            outline: none;
+        }
+        .navbar .search-bar input::placeholder {
+            color: #999;
+        }
+        .navbar .right-icons a {
+            color: withe;
+            text-decoration: none;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .navbar .right-icons a i {
+            margin-right: 5px;
+        }
+        .navbar .right-icons .cart-count {
+            font-weight: bold;
+        }
+        .navbar .home-link {
+            margin-left: 15px;
+            font-size: 18px;
+        }

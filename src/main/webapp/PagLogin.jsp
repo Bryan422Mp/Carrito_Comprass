@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Registrarse</title>
+        <title>Login</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
@@ -23,12 +23,17 @@
                         <div class="card-body">
                             <h5>Login</h5>
                             <hr />
-                            <form action="ClienteControlador" method="post"> 
+                            <form action="AuthControlador" method="post"> 
+                                <div class="mb-3 text-center">
+                                    <img src="assets/img/recursos/login.jpg" 
+                                         style="width: 200px;" alt="Login"/>
+
+                                </div>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label>Correo Electrónico: <span class="obligatorio">(*)</span></label>
-                                            <input value="${cliente.correo}" type="email" class="from-control" 
+                                            <input type="email" class="from-control" 
                                                    name="correo" placeholder="Ingrese su correo electronico" required=""/>
                                         </div>
                                     </div>
@@ -38,14 +43,14 @@
                                     <div class="col-sm-12">
                                         <div class="mb-3">
                                             <label>Contraseña: <span class="obligatorio">(*)</span></label>
-                                            <input value="${cliente.password}" type="password" class="from-control" 
+                                            <input type="password" class="from-control" 
                                                    name="password" placeholder="Ingrese su contraseña" required=""/>
                                         </div>
                                     </div>
                                 </div>
 
-                                <input type="hidden" name="accion" value="guardar"/>
-                                <button type="submit" class="btn btn-primary">Registrarse</button>
+                                <input type="hidden" name="accion" value="autentificarse"/>
+                                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                             </form>
                         </div>
                     </div>
