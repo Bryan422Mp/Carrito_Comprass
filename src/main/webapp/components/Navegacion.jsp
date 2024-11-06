@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -38,18 +39,26 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     </ul>
-
+                    <a href="CarritoControlador?accion=listar" class="btn btn-dark ms-3">
+                        <i class="fa fa-shopping-cart"></i> (<span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size(): 0}</span>) Carrito
+                    </a>
                     <div class="right-icons d-flex ms-auto">
-                        <a href="ClienteControlador?accion=nuevo" class="btn btn-dark">
-                            <i class="fas fa-user-plus"></i> Registrarse
-                        </a>
-                        <a href="AuthControlador?accion=login" class="btn btn-dark ms-3">
-                            <i class="fas fa-user-lock"></i> Login
-                        </a>
-                        <a href="CarritoControlador?accion=listar" class="btn btn-dark ms-3">
-                            <i class="fa fa-shopping-cart"></i> (<span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size(): 0}</span>) Carrito
-                        </a>
-                    </div>
+                        <c:if test="${sessionScope.usuario == null}">
+                            <a href="ClienteControlador?accion=nuevo" class="btn btn-dark">
+                                <i class="fas fa-user-plus"></i> Registrarse
+                            </a>
+                            &nbsp;
+                            <a href="AuthControlador?accion=login" class="btn btn-dark ms-3">
+                                <i class="fas fa-user-lock"></i> Login
+                            </a>
+                        </c:if>
+                        <c:if test="${sessionScope.usuario == null}">
+                            <span class="btn btn-light">${sessionScope.usuario.nombresCompletos()}</span>
+                            &nbsp;
+                            <a href="AuthControlador?accion=logout" class="btn btn-dark"></a>
+                            <i class="fa fa-sing-out-alt"></i> Cerrar Sesión
+                        </c:if>
+                    </div >
                 </div>
             </div>
         </nav>
