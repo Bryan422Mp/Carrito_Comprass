@@ -39,9 +39,13 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     </ul>
-                    <a href="CarritoControlador?accion=listar" class="btn btn-dark ms-3">
-                        <i class="fa fa-shopping-cart"></i> (<span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size(): 0}</span>) Carrito
-                    </a>
+                    <c:if test="${sessionScope.usuario != null}">
+                        <li class="nav-item">
+                            <a href="PedidoControlador?accion=mis_pedidos" class="btn btn-dark ms-3">
+                                <i class="fa fa-receipt"></i>  Mis pedidos
+                            </a>
+                        </li>
+                    </c:if>
                     <div class="right-icons d-flex ms-auto">
                         <c:if test="${sessionScope.usuario == null}">
                             <a href="ClienteControlador?accion=nuevo" class="btn btn-dark">
@@ -52,17 +56,22 @@
                                 <i class="fas fa-user-lock"></i> Login
                             </a>
                         </c:if>
-                        <c:if test="${sessionScope.usuario == null}">
+
+                        <c:if test="${sessionScope.usuario != null}">
                             <span class="btn btn-light">${sessionScope.usuario.nombresCompletos()}</span>
                             &nbsp;
-                            <a href="AuthControlador?accion=logout" class="btn btn-dark"></a>
-                            <i class="fa fa-sing-out-alt"></i> Cerrar Sesión
+                            <a href="AuthControlador?accion=logout" class="btn btn-dark ms-3">
+                                <i class="fa fa-sing-out-alt"></i> Cerrar Sesión
+                            </a>
                         </c:if>
+                        <a href="CarritoControlador?accion=listar" class="btn btn-dark ms-3">
+                            <i class="fa fa-shopping-cart"></i> 
+                            (<span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size(): 0}</span>) Carrito
+                        </a>
                     </div >
                 </div>
             </div>
         </nav>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76A9YHarIhF1yLgt8VJATtjF0OsfhaBw1JJ0yOp6Ewl7v5E4Fo5o2bMZt0ikP5r" crossorigin="anonymous"></script>
     </body>
 </html>

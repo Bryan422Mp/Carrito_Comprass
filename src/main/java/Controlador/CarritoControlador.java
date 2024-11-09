@@ -21,22 +21,13 @@ import util.Carrito;
  */
 public class CarritoControlador extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    
+
     private String PagListarCarrito = "PagCarrito.jsp";
     private String PagInicio = "index.jsp";
-    
+
     private ProductoDAO prodDao = new ProductoDAO();
     private Carrito objCarrito = new Carrito();
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -64,29 +55,30 @@ public class CarritoControlador extends HttpServlet {
         request.setAttribute("total", objCarrito.ImporteTotal(lista));
         request.getRequestDispatcher(PagListarCarrito).forward(request, response);
     }
+
     protected void Agregar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int idProd = Integer.parseInt(request.getParameter( "id"));
+        int idProd = Integer.parseInt(request.getParameter("id"));
         Producto obj = prodDao.BuscarPorId(idProd);
-        
+
         if (obj != null) {
             DetallePedido objDet = new DetallePedido();
             objDet.setProducto(obj);
             objDet.setCantidad(1);
-            
+
             objCarrito.AgregarCarrito(objDet, request);
         }
         request.getRequestDispatcher(PagInicio).forward(request, response);
     }
-    
+
     protected void Eliminar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        int indice = Integer.parseInt(request.getParameter( "indice"));
-        
+        int indice = Integer.parseInt(request.getParameter("indice"));
+
         objCarrito.RemoverItemCarrito(request, indice);
-        
+
         response.sendRedirect("CarritoControlador?accion=listar");
     }
 

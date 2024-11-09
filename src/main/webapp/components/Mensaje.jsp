@@ -23,7 +23,7 @@
         Swal.fire({
             title: "¡Advertencia!",
             text: "${sessionScope.error}",
-            icon: "success"
+            icon: "error"
         });
 
     </script>

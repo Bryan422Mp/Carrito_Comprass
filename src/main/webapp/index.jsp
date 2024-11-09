@@ -25,19 +25,19 @@
                     <div class="d-flex justify-content-center">
                         <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
                         <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                        <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                        <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center">
                         <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                        <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                        <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
                         <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center">
-                        <img src="assets/img/Carrusel/car03.png" class="img-carousel" alt="Promo 3">
+                        <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
                         <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
                         <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
                     </div>
