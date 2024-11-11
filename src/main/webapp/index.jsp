@@ -14,70 +14,113 @@
         <title>Carrito de Compras</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
     </head>
-<body>
-    <jsp:include page="components/Navegacion.jsp"/>
-    <div class="container-fluid mt-3">
-        <div id="promotionalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 100%; margin: auto;">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center">
-                        <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
-                        <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                        <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
+    <body>
+        <jsp:include page="components/Navegacion.jsp"/>
+        <div class="container-fluid mt-3">
+            <div id="promotionalCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 100%; margin: auto;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                            <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                            <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
+                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
+                            <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
+                            <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                        <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
-                        <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center">
-                        <img src="assets/img/Carrusel/car06.png" class="img-carousel" alt="Promo 3">
-                        <img src="assets/img/Carrusel/car01.png" class="img-carousel" alt="Promo 1">
-                        <img src="assets/img/Carrusel/car02.png" class="img-carousel" alt="Promo 2">
-                    </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>   
+        <style>
+            body {
+                background-color: #000;
+            }
+            .carousel {
+                width: 100%;
+                background-color: #333;
+                padding: 10px 0 20px 0;
+                margin: auto;
+            }
+            .img-carousel {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin: 0 5px;
+                max-height: 340px;
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+            }
+
+        </style>
+        <style>
+            /* Fondo Naranja que ocupa todo el ancho */
+            .search-bar-background {
+                background-color: #ff6f0a; /* Color de fondo */
+                padding: 20px 0;
+                border-radius: 0 0 50% 50%; /* Curva en la parte inferior */
+                width: 100%;
+                margin-bottom: 20px; /* Espacio debajo */
+            }
+
+            .search-bar-container {
+                max-width: 600px; /* Ancho máximo de la barra de búsqueda */
+                margin: 0 auto; /* Centrar */
+            }
+
+            .search-bar-input {
+                border-radius: 25px 0 0 25px; /* Bordes redondeados en la izquierda */
+                border: none;
+                padding: 10px 15px;
+                width: 80%;
+            }
+
+            .search-bar-button {
+                border-radius: 0 25px 25px 0; /* Bordes redondeados en la derecha */
+                background-color: #ffffff;
+                color: #ff6f0a;
+                border: none;
+                padding: 10px 15px;
+            }
+
+            .search-bar-button:hover {
+                background-color: #ddd;
+            }
+        </style>
+        <div class="search-bar-background">
+            <div class="container">
+                <div class="search-bar-container text-center">
+                    <form action="buscar" method="get" class="d-flex justify-content-center">
+                        <input type="text" name="query" class="form-control search-bar-input" placeholder="Search by Keyword" aria-label="Search">
+                        <button type="submit" class="btn search-bar-button"><i class="fa fa-search"></i></button>
+                    </form>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#promotionalCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>                                
-    <style>
-        body {
-            background-color: #000; 
-        }
-        .carousel {
-            width: 100%;
-            background-color: #333;   
-            padding: 10px 0 20px 0;
-            margin: auto;   
-        }
-        .img-carousel {
-            width: 100%; 
-            height: auto; 
-            border-radius: 5px; 
-            margin: 0 5px;
-            max-height: 340px; 
-        }
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: rgba(255, 255, 255, 0.5); 
-            border-radius: 50%; 
-        }
-        
-    </style>
-    
+
         <div class="container mt-4">
             <h5 class="text-center">Catálogo de Productos</h5>
             <hr />
@@ -102,15 +145,15 @@
                 </c:forEach>
             </div>
         </div>
-            
-    <footer class="text-center text-white mt-5" style="background-color: #333; padding: 20px;">
-        <p>&copy; 2024 NekoToys. Todos los derechos reservados.</p>
-        <p>Siguenos en:
-            <a href="https://facebook.com" target="_blank" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
-        </p>
-    </footer>   
+
+        <footer class="text-center text-white mt-5" style="background-color: #333; padding: 20px;">
+            <p>&copy; 2024 NekoToys. Todos los derechos reservados.</p>
+            <p>Siguenos en:
+                <a href="https://facebook.com" target="_blank" class="text-white mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </p>
+        </footer>   
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>
 </html>
